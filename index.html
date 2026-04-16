@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title>Rajesh : Calculator</title>
+        <style>
+            body{
+                background-color: rgb(16,177,177);
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            table{
+                margin-left : auto;
+                margin-right: auto;
+            }
+            h3{
+                text-align: center;
+            }
+            input[type="button"]{
+                width: 50px;
+                height: 50px;
+                background-color: #008b8b;
+                border: 0px;
+                font-size: 22px;
+                border-radius: 50px;
+                color: #ffffff;
+            }
+            input[type="text"]{
+                width: 210px;
+                height: 40px;
+                border-radius: 10px;
+                border: none;
+                text-align: right;
+                font-size: 22px;
+            }
+            input[type="button"]:hover {
+                background-color: #ffffff;
+                color: #008b8b;
+            }
+        </style>
+        <script>
+            var decimalOn = false;
+            var oprerand1 = 0.0;
+            var oprerand2 = 0.0;
+            var operator = "";
+            var operatorClicked = false;
+            function calcButtonClick(btnValue){
+                var currValue = document.getElementById("mainText").value;
+                if(currValue == "0" || operatorClicked){
+                    document.getElementById("mainText").value = btnValue;
+                    operatorClicked = false;
+                    decimalOn = false;
+                } else{
+                    document.getElementById("mainText").value = document.getElementById("mainText").value + btnValue;
+                }
+            }
+            function calcFunctionButtonClick(btnValue){
+                if(btnValue == "AC"){
+                    document.getElementById("mainText").value = "0";
+                    decimalOn = false;
+                } else if(btnValue == "PN"){
+                    document.getElementById("mainText").value = parseFloat(document.getElementById("mainText").value) * -1;
+                } else if(btnValue == "DEC"){
+                    if(!decimalOn){
+                        document.getElementById("mainText").value = parseFloat(document.getElementById("mainText").value) + ".";
+                        decimalOn = true;
+                    }                    
+                } else if(btnValue == "+" ||btnValue == "-"||btnValue == "*"||btnValue == "/"){
+                    operator = btnValue;
+                    oprerand1 = parseFloat(document.getElementById("mainText").value);
+                    operatorClicked = true;
+                } else if(btnValue == "="){
+                    oprerand2 = parseFloat(document.getElementById("mainText").value);
+                    if(operator == "+"){
+                        document.getElementById("mainText").value = oprerand1 + oprerand2;
+                    } else if(operator == "-"){
+                        document.getElementById("mainText").value = oprerand1 - oprerand2;
+                    } else if(operator == "/"){
+                        document.getElementById("mainText").value = oprerand1 / oprerand2;
+                    } else if(operator == "*"){
+                        document.getElementById("mainText").value = oprerand1 * oprerand2;
+                    } 
+                    operator = "";
+                    oprerand1 = 0.0;
+                    oprerand2 = 0.0;
+                } else if(btnValue == "%"){
+                    document.getElementById("mainText").value = parseFloat(document.getElementById("mainText").value) / 100;  
+                    operator = "";
+                    oprerand1 = 0.0;
+                    oprerand2 = 0.0;
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Rajesh  Calculator</h3>
+        <hr/>
+        <table border="0">
+            <tr>
+                <td colspan="4"><input type="text" name="mainText" id="mainText" value="0"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="AC" onclick="calcFunctionButtonClick('AC')"/></td>
+                <td><input type="button" value="+/-" onclick="calcFunctionButtonClick('PN')"/></td>
+                <td><input type="button" value="%" onclick="calcFunctionButtonClick('%')"/></td>
+                <td><input type="button" value="/" onclick="calcFunctionButtonClick('/')"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="calcButtonClick(7)"/></td>
+                <td><input type="button" value="8" onclick="calcButtonClick(8)"/></td>
+                <td><input type="button" value="9" onclick="calcButtonClick(9)"/></td>
+                <td><input type="button" value="X" onclick="calcFunctionButtonClick('*')"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="calcButtonClick(4)"/></td>
+                <td><input type="button" value="5" onclick="calcButtonClick(5)"/></td>
+                <td><input type="button" value="6" onclick="calcButtonClick(6)"/></td>
+                <td><input type="button" value="-" onclick="calcFunctionButtonClick('-')"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="calcButtonClick(1)"/></td>
+                <td><input type="button" value="2" onclick="calcButtonClick(2)"/></td>
+                <td><input type="button" value="3" onclick="calcButtonClick(3)"/></td>
+                <td><input type="button" value="+" onclick="calcFunctionButtonClick('+')"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0" onclick="calcButtonClick(0)"/></td>
+                <td><input type="button" value="." onclick="calcFunctionButtonClick('DEC')"/></td>                
+                <td colspan="2"><input style="width: 103px;" type="button" value="=" onclick="calcFunctionButtonClick('=')"/></td>
+            </tr>
+        </table>
+    </body>
+</html>
