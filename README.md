@@ -20,7 +20,7 @@ Open `index.html` directly in any browser — no build tools, no installation re
 
 ## 🚀 How to Run
 
-### Option 1 — Open directly
+### Open directly
 ```bash
 # Clone the repository
 git clone https://github.com/rajesh-rajan-dev/javascript-calculator.git
@@ -28,10 +28,6 @@ git clone https://github.com/rajesh-rajan-dev/javascript-calculator.git
 # Open in browser
 open index.html
 ```
-
-### Option 2 — GitHub Pages
-This project is hosted live via GitHub Pages:
-👉 **[Live Demo](https://rajesh-rajan-dev.github.io/javascript-calculator/)**
 
 ## 🛠️ Built With
 
