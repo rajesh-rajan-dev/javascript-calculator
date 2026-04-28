@@ -1,10 +1,10 @@
-# 🧮 JavaScript Calculator
+# JavaScript Calculator
 
 A clean, fully functional calculator built with vanilla HTML, CSS, and JavaScript — inspired by the iOS calculator design.
 
 ![Calculator Screenshot](screenshot.png)
 
-## ✨ Features
+## Features
 
 - **Basic arithmetic** — Addition, Subtraction, Multiplication, Division
 - **Percentage calculation** — Convert any value to percentage instantly
@@ -14,11 +14,11 @@ A clean, fully functional calculator built with vanilla HTML, CSS, and JavaScrip
 - **Clean iOS-inspired UI** — Circular buttons, teal colour scheme, smooth hover effects
 - **Zero external dependencies** — Pure HTML, CSS, and JavaScript
 
-## 🖥️ Demo
+## Demo
 
 Open `index.html` directly in any browser — no build tools, no installation required.
 
-## 🚀 How to Run
+## How to Run
 
 ### Open directly
 ```bash
@@ -29,7 +29,7 @@ git clone https://github.com/rajesh-rajan-dev/javascript-calculator.git
 open index.html
 ```
 
-## 🛠️ Built With
+## Built With
 
 | Technology | Purpose |
 |---|---|
@@ -37,7 +37,7 @@ open index.html
 | CSS3 | Styling, hover effects, responsive design |
 | JavaScript (ES5) | Calculator logic, DOM manipulation |
 
-## 📐 Project Structure
+## Project Structure
 
 ```
 javascript-calculator/
@@ -47,7 +47,7 @@ javascript-calculator/
 └── README.md         # Project documentation
 ```
 
-## 🔧 Key JavaScript Concepts Used
+## Key JavaScript Concepts Used
 
 - **DOM Manipulation** — `getElementById`, `value` property
 - **Event Handling** — `onclick` button events
@@ -55,7 +55,7 @@ javascript-calculator/
 - **Type Coercion** — `parseFloat()` for accurate arithmetic
 - **Conditional Logic** — Operator-based calculation routing
 
-## 💡 How It Works
+## How It Works
 
 The calculator maintains three state variables:
 - `operand1` — First number entered
@@ -64,14 +64,14 @@ The calculator maintains three state variables:
 
 When an operator button is pressed, `operand1` is stored and the display resets for the next input. When `=` is pressed, the operation is executed and the result is displayed.
 
-## 🎨 Design Highlights
+## Design Highlights
 
 - Teal (`#008b8b`) colour palette with white text
 - Circular buttons (`border-radius: 50px`) matching iOS calculator style
 - White hover effect for visual feedback
 - Centered layout using CSS `margin: auto`
 
-## 👨‍💻 Author
+## Author
 
 **Rajesh Rajan**  
 Senior Java Backend Engineer | Stockholm, Sweden  
